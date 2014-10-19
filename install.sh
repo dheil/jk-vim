@@ -93,6 +93,11 @@ fi
 TODAY=`date +%Y%m%d`
 FILES="$dir/dotfiles/*"
 
+MVARG=
+if [[ -n $VERBOSE ]]; then
+  MVARG=-v
+fi
+
 ####
 # link all files in ./dotfiles to $HOME or /etc
 # backup files that are already there
@@ -107,9 +112,7 @@ for rcfile in $FILES; do
     DESTFILE="$DEST/.$file"
   fi
   if [[ -z $NOBACKUP ]]; then
-    MVARG=
     if [[ -n $VERBOSE ]]; then
-      MVARG=-v
       [ -e $DESTFILE ] && echo "backing up $DESTFILE"
     fi
 
@@ -121,4 +124,39 @@ done
 ###
 # prepare vim directory
 
+vimdir="$DEST/.vim"
+
+if [[ -e $vimdir.$TODAY ]]; then
+  read -p "$vimdir.$TODAY already exists... continue?(y/n)" -n 1 -r
+  echo    # (optional) move to a new line
+  if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+    exit 1
+  fi
+  rm -rf "$vimdir.$TODAY"
+fi
+
+[ -e "$vimdir" ] && mv $MVARG "$vimdir" "$vimdir.$TODAY"
+
+mkdir -p $vimdir/bundle
+mkdir -p $vimdir/colors
+
+FILES="$dir/colors/*"
+
+for rcfile in $FILES; do
+  file=${rcfile##*/}
+  destination="$vimdir/colors/$file"
+  ln -s "$rcfile" "$destination"
+done
+
+FILES="$dir/vimfiles/*"
+
+for rcfile in $FILES; do
+  file=${rcfile##*/}
+  destination="$vimdir/$file"
+  ln -s "$rcfile" "$destination"
+done
+
+git clone https://github.com/gmarik/Vundle.vim.git "$vimdir/bundle/Vundle.vim"
+
+vim +PluginInstall +qall
 
