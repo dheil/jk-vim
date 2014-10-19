@@ -165,6 +165,10 @@ set guifont=Inconsolata-g\ for\ Powerline:h12
 vnoremap < <gv
 vnoremap > >gv
 
+"if filereadable($HOME . "/.vim/filetypes.vim")
+"  source ~/.vim/filetypes.vim
+"endif
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local

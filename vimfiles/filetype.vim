@@ -4,11 +4,6 @@
 " inspired by https://github.com/ddellaquila/dd-vim/blob/master/filetypes.vim
 "
 
-" source local variant if it exists
-if !empty(glob("filetypes.local.vim"))
-  $source "filetypes.local.vim"
-endif
-
 if exists("did_load_filetypes")
   finish
 endif
@@ -24,3 +19,9 @@ autocmd FileType html  set tabstop=2|set shiftwidth=2
 autocmd FileType xhtml set tabstop=2|set shiftwidth=2
 autocmd FileType xml   set tabstop=2|set shiftwidth=2
 autocmd FileType py    set tabstop=4|set shiftwidth=4
+
+" source local variant if it exists
+if !empty(glob("filetypes.local.vim"))
+  source filetypes.local.vim
+endif
+
