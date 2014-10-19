@@ -25,29 +25,18 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 Plugin 'gregsexton/MatchTag'
 
 " Color Themes
-Plugin 'sk1418/last256'
-"autocmd BufWinEnter * call matchadd("Important","!Important!")
-"autocmd BufWinEnter * call matchadd("MK1","!MARK1")
-"autocmd BufWinEnter * call matchadd("MK2","!MARK2")
-"autocmd BufWinEnter * call matchadd("MK3","!MARK3")
-"autocmd BufWinEnter * call matchadd("FIXME","FIXME")
-
-Plugin 'croaky/vim-colors-github'
-Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'w0ng/vim-hybrid'
-Plugin 'tomasr/molokai'
-
-"" Define bundles via Github repos
-"Plugin 'christoomey/vim-run-interactive'
-"" Add this to your vimrc to provide a shortcut
-"nnoremap <leader>ri :RunInInteractiveShell<space>
+"Plugin 'sk1418/last256'
+"Plugin 'croaky/vim-colors-github'
+"Plugin 'chriskempson/vim-tomorrow-theme'
+"Plugin 'nanotech/jellybeans.vim'
+"Plugin 'w0ng/vim-hybrid'
+"Plugin 'tomasr/molokai'
 
 "------------------------------------------------------------------------------
 " Tagbar
 " on Mac: brew install ctag
-Plugin 'majutsushi/tagbar'
-nmap <F8> :TagbarToggle<CR>
+"Plugin 'majutsushi/tagbar'
+"nmap <F8> :TagbarToggle<CR>
 
 "------------------------------------------------------------------------------
 " Airline {{{
@@ -76,29 +65,39 @@ let g:airline#extensions#tabline#buffer_min_count = 2
 "------------------------------------------------------------------------------
 " snipmate
 "
-Plugin 'msanders/snipmate.vim'
+"Plugin 'msanders/snipmate.vim'
 
 "------------------------------------------------------------------------------
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'kien/ctrlp.vim'
-Plugin 'pbrisbin/vim-mkdir'
-Plugin 'scrooloose/syntastic'
-Plugin 'slim-template/vim-slim'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-ruby/vim-ruby'
-"Plugin 'vim-scripts/ctags.vim'
-Plugin 'vim-scripts/matchit.zip'
-Plugin 'vim-scripts/tComment'
+" Syntastic - Syntax checking hacks for vim {{{
 
-if filereadable(expand("~/.vimrc.bundles.local"))
-  source ~/.vimrc.bundles.local
+"Plugin 'scrooloose/syntastic'
+
+" }}}
+
+"------------------------------------------------------------------------------
+
+" CoffeeScript support for vim
+Plugin 'kchmck/vim-coffee-script'
+
+"Plugin 'kien/ctrlp.vim'
+"Plugin 'pbrisbin/vim-mkdir'
+"
+"Plugin 'slim-template/vim-slim'
+"Plugin 'thoughtbot/vim-rspec'
+"Plugin 'tpope/vim-bundler'
+"Plugin 'tpope/vim-endwise'
+"Plugin 'tpope/vim-eunuch'
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'tpope/vim-rails'
+"Plugin 'tpope/vim-repeat'
+"Plugin 'tpope/vim-surround'
+"Plugin 'vim-ruby/vim-ruby'
+""Plugin 'vim-scripts/ctags.vim'
+"Plugin 'vim-scripts/matchit.zip'
+"Plugin 'vim-scripts/tComment'
+
+if filereadable(expand("bundles.local.vim"))
+  source bundles.local.vim
 endif
 
 call vundle#end()
