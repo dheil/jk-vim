@@ -36,16 +36,49 @@ Plugin 'croaky/vim-colors-github'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'w0ng/vim-hybrid'
+Plugin 'tomasr/molokai'
 
 "" Define bundles via Github repos
 "Plugin 'christoomey/vim-run-interactive'
 "" Add this to your vimrc to provide a shortcut
 "nnoremap <leader>ri :RunInInteractiveShell<space>
 
+"------------------------------------------------------------------------------
+" Tagbar
+" on Mac: brew install ctag
+Plugin 'majutsushi/tagbar'
+nmap <F8> :TagbarToggle<CR>
+
+"------------------------------------------------------------------------------
+" Airline {{{
+" lean & mean status/tabline for vim that's light as air
+
+Plugin 'bling/vim-airline'
+
+set noshowmode
+
+" find themes at: https://github.com/bling/vim-airline/wiki/Screenshots
+" let g:airline_theme='powerlineish'
+" let g:airline_theme='solarized'
+" let g:airline_theme='tomorrow' " works best for hybrid theme
+let g:airline_theme='hybrid' " works best for hybrid theme
+let g:airline_enable_branch=1
+let g:airline_powerline_fonts=1
+let g:airline_detect_whitespace = 1
+let g:airline#extensions#hunks#non_zero_only = 1
+
+let g:airline#extensions#tabline#enabled = 2
+" let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#buffer_min_count = 2
+
+" }}}
+
+"------------------------------------------------------------------------------
 " snipmate
 "
 Plugin 'msanders/snipmate.vim'
 
+"------------------------------------------------------------------------------
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'pbrisbin/vim-mkdir'
@@ -60,7 +93,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'vim-scripts/ctags.vim'
+"Plugin 'vim-scripts/ctags.vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/tComment'
 

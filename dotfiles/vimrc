@@ -153,14 +153,16 @@ set spellfile=$HOME/.vim-spell-en.utf-8.add
 " Always use vertical diffs
 set diffopt+=vertical
 
-set guifont=Menlo:h12
+" set guifont=Menlo:h12
 "set guifont=Monaco:h12
 "set guifont=Monospace:h12
+"set guifont=Droid\ Sans\ Mono\ for\ Powerline:h13
+"set guifont=Source\ Code\ Pro\ for\ Powerline:h13
+set guifont=Inconsolata-g\ for\ Powerline:h12
 
 "make < > shifts keep selection
 vnoremap < <gv
 vnoremap > >gv
-
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
