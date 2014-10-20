@@ -180,7 +180,7 @@ vnoremap > >gv
 "endif
 
 " Better copy & paste
-set pastetoogle=<F2>
+set pastetoggle=<F2>
 set clipboard=unnamed
 
 " Local config
