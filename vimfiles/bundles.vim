@@ -101,6 +101,9 @@ Plugin 'tpope/vim-fugitive'
 
 Plugin 'scrooloose/nerdcommenter'
 
+" emmet for vim: http://emmet.io/ http://mattn.github.io/emmet-vim
+Plugin 'mattn/emmet-vim'
+
 "Plugin 'vim-ruby/vim-ruby'
 ""Plugin 'vim-scripts/ctags.vim'
 "Plugin 'vim-scripts/matchit.zip'
