@@ -179,6 +179,10 @@ vnoremap > >gv
 "  source ~/.vim/filetypes.vim
 "endif
 
+" Better copy & paste
+set pastetoogle=<F2>
+set clipboard=unnamed
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
