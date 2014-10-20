@@ -2,6 +2,9 @@
 " possible, as it has side effects.
 set nocompatible
 
+" auto reload .vimrc if it is changed
+autocmd! bufwritepost .vimrc source %
+
 " Leader
 let mapleader = ","
 
@@ -35,9 +38,6 @@ filetype plugin indent on
 augroup vimrcEx
   " clear group
   autocmd!
-
-  " auto reload .vimrc if it is changed
-  autocmd! bufwritepost .vimrc source %
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it for commit messages, when the position is invalid, or when
@@ -189,6 +189,21 @@ set clipboard=unnamed
 " Works in insert mode, saves and puts back in insert mode"
 ":imap <T-s> <Esc>:w<kEnter>i
 " }}}
+
+" Quick quit command
+noremap <Leader>e :quit<CR> " Quit current window
+noremap <Leader>E :qa!<CR>  " Quit all windows
+
+" disable bell (beep) and flashing screen
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
+
+" easier moving between tabs
+map <Leader>n <esc>:tabprevious<CR>
+map <Leader>m <esc>:tabnext<CR>
+
+" map sort function to a key
+vnoremap <Leader>s :sort<CR>
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
