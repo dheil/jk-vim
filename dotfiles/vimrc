@@ -29,8 +29,15 @@ endif
 
 filetype plugin indent on
 
+" group autocmd's to give vim a chance to overwrite them when it resources
+" this config file.
+" http://learnvimscriptthehardway.stevelosh.com/chapters/14.html
 augroup vimrcEx
+  " clear group
   autocmd!
+
+  " auto reload .vimrc if it is changed
+  autocmd! bufwritepost .vimrc source %
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it for commit messages, when the position is invalid, or when
@@ -154,12 +161,15 @@ set spellfile=$HOME/.vim-spell-en.utf-8.add
 " Always use vertical diffs
 set diffopt+=vertical
 
-" set guifont=Menlo:h12
+"---
+" GUI Font / some inspirations:
+"set guifont=Menlo:h12
 "set guifont=Monaco:h12
 "set guifont=Monospace:h12
 "set guifont=Droid\ Sans\ Mono\ for\ Powerline:h13
 "set guifont=Source\ Code\ Pro\ for\ Powerline:h13
-set guifont=Inconsolata-g\ for\ Powerline:h12
+" my favorite font
+set guifont=Inconsolata-g\ for\ Powerline:h13
 
 "make < > shifts keep selection
 vnoremap < <gv
