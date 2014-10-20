@@ -87,10 +87,20 @@ Plugin 'kchmck/vim-coffee-script'
 "Plugin 'tpope/vim-bundler'
 "Plugin 'tpope/vim-endwise'
 "Plugin 'tpope/vim-eunuch'
-"Plugin 'tpope/vim-fugitive'
+
+" fugitive.vim: a Git wrapper so awesome, it should be illegal
+" http://www.vim.org/scripts/script.php?script_id=2975
+Plugin 'tpope/vim-fugitive'
+
 "Plugin 'tpope/vim-rails'
 "Plugin 'tpope/vim-repeat'
+
+" surround.vim: quoting/parenthesizing made simple
+" http://www.vim.org/scripts/script.php?script_id=1697
 "Plugin 'tpope/vim-surround'
+
+Plugin 'scrooloose/nerdcommenter'
+
 "Plugin 'vim-ruby/vim-ruby'
 ""Plugin 'vim-scripts/ctags.vim'
 "Plugin 'vim-scripts/matchit.zip'
