@@ -104,6 +104,11 @@ Plugin 'scrooloose/nerdcommenter'
 " emmet for vim: http://emmet.io/ http://mattn.github.io/emmet-vim
 Plugin 'mattn/emmet-vim'
 
+" Zen Editing
+Plugin 'junegunn/goyo.vim'
+Plugin 'amix/vim-zenroom2'
+nnoremap <silent> <leader>z :Goyo<cr>
+
 "Plugin 'vim-ruby/vim-ruby'
 ""Plugin 'vim-scripts/ctags.vim'
 "Plugin 'vim-scripts/matchit.zip'

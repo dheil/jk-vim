@@ -13,6 +13,12 @@ augroup filetypedetect
   au! BufRead,BufNewFile *.rst      setfiletype rst
   au! BufRead,BufNewFile *.txt      setfiletype markdown
   au! BufRead,BufNewFile *.md       setfiletype markdown
+
+  au BufNewFile,BufRead,BufEnter *.wiki  setlocal spell  spelllang=de_de
+  au BufNewFile,BufRead,BufEnter *.md    setlocal spell  spelllang=de_de
+  au BufNewFile,BufRead,BufEnter *.txt   setlocal spell  spelllang=de_de
+  au BufNewFile,BufRead,BufEnter README  setlocal spell  spelllang=en_us
+  au BufNewFile,BufRead,BufEnter README.md  setlocal spell  spelllang=en_us
 augroup END
 
 autocmd FileType html  set tabstop=2|set shiftwidth=2

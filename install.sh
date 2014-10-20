@@ -139,12 +139,21 @@ fi
 
 mkdir -p $vimdir/bundle
 mkdir -p $vimdir/colors
+mkdir -p $vimdir/spell
 
 FILES="$dir/colors/*"
 
 for rcfile in $FILES; do
   file=${rcfile##*/}
   destination="$vimdir/colors/$file"
+  ln -s "$rcfile" "$destination"
+done
+
+FILES="$dir/spell/*"
+
+for rcfile in $FILES; do
+  file=${rcfile##*/}
+  destination="$vimdir/spell/$file"
   ln -s "$rcfile" "$destination"
 done
 
@@ -155,6 +164,10 @@ for rcfile in $FILES; do
   destination="$vimdir/$file"
   ln -s "$rcfile" "$destination"
 done
+
+# copy additinal spell-files
+cp optional/.vim-spell-de.utf-8.add ~/.vim-spell-de.utf-8.add
+cp optional/.vim-spell-en.utf-8.add ~/.vim-spell-en.utf-8.add
 
 git clone https://github.com/gmarik/Vundle.vim.git "$vimdir/bundle/Vundle.vim"
 
