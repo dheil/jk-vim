@@ -122,6 +122,21 @@ endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <S-Tab> <c-n>
 
+"spelling
+if has("spell")
+  " turn spelling on by default
+  " set spell
+
+  " toggle spelling with F4 key
+  map <F4> :set spell!<CR><Bar>:echo "Spell Check: " . strpart("OffOn", 3 * &spell, 3)<CR>
+
+  " they were using white on white
+  highlight PmenuSel ctermfg=black ctermbg=lightgray
+
+  " limit it to just the top 10 items
+  set sps=best,10                    
+endif
+
 " Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 
@@ -129,13 +144,37 @@ let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 map <Leader>ct :!ctags -R .<CR>
 
 " Switch between the last two files
-nnoremap <leader><leader> <c-^>
+"nnoremap <leader><leader> <c-^>
 
 " Get off my lawn
 "nnoremap <Left> :echoe "Use h"<CR>
 "nnoremap <Right> :echoe "Use l"<CR>
 "nnoremap <Up> :echoe "Use k"<CR>
 "nnoremap <Down> :echoe "Use j"<CR>
+
+" map ü <C-]>
+map ü [
+inoremap ü [
+map ö :
+inoremap ö :
+map ä ]
+inoremap ä ]
+map Ü {
+map Ä }
+inoremap Ü {
+inoremap Ä }
+noremap ß /
+inoremap ß /
+
+inoremap jj <esc>
+inoremap jk <esc>
+inoremap jkk jk
+"inoremap <esc> :echoe "Use jj"<CR>
+nnoremap <leader>. :
+
+inoremap o" ö
+inoremap a" ä
+inoremap u" ü
 
 " vim-rspec mappings
 nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
