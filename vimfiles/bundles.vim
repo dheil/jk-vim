@@ -11,6 +11,10 @@ Plugin 'gmarik/Vundle.vim'
 
 " NERDTree - https://github.com/scrooloose/nerdtree
 Plugin 'scrooloose/nerdtree'
+
+" show hidden files
+let NERDTreeShowHidden=1
+
 let NERDTreeCaseSensitiveSort = 1
 map <F9> :NERDTreeToggle <CR>
 
@@ -79,7 +83,11 @@ let g:airline#extensions#tabline#buffer_min_count = 2
 " CoffeeScript support for vim
 Plugin 'kchmck/vim-coffee-script'
 
-"Plugin 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
 "Plugin 'pbrisbin/vim-mkdir'
 "
 "Plugin 'slim-template/vim-slim'

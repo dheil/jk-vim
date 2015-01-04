@@ -134,7 +134,7 @@ if has("spell")
   highlight PmenuSel ctermfg=black ctermbg=lightgray
 
   " limit it to just the top 10 items
-  set sps=best,10                    
+  set sps=best,10
 endif
 
 " Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
@@ -152,37 +152,37 @@ map <Leader>ct :!ctags -R .<CR>
 "nnoremap <Up> :echoe "Use k"<CR>
 "nnoremap <Down> :echoe "Use j"<CR>
 
-" map ü <C-]>
-map ü [
-inoremap ü [
-map ö :
-inoremap ö :
-map ä ]
-inoremap ä ]
-map Ü {
-map Ä }
-inoremap Ü {
-inoremap Ä }
-noremap ß /
-inoremap ß /
+" map <silent> ü <C-]>
+map <silent> ü [
+inoremap <silent> ü [
+map <silent> ö :
+inoremap <silent> ö :
+map <silent> ä ]
+inoremap <silent> ä ]
+map <silent> Ü {
+map <silent> Ä }
+inoremap <silent> Ü {
+inoremap <silent> Ä }
+noremap <silent> ß /
+inoremap <silent> ß /
 
-inoremap jj <esc>
-inoremap jk <esc>
-inoremap jkk jk
-"inoremap <esc> :echoe "Use jj"<CR>
-nnoremap <leader>. :
+inoremap <silent> jj <esc>
+inoremap <silent> jk <esc>
+inoremap <silent> jkk jk
+"inoremap <silent> <esc> :echoe "Use jj"<CR>
+nnoremap <silent> <leader>. :
 
-inoremap o" ö
-inoremap a" ä
-inoremap u" ü
+inoremap <silent> o" ö
+inoremap <silent> a" ä
+inoremap <silent> u" ü
 
-" vim-rspec mappings
-nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>s :call RunNearestSpec()<CR>
-nnoremap <Leader>l :call RunLastSpec()<CR>
+" vim-rspec map <silent>pings
+nnoremap <silent> <Leader>t :call RunCurrentSpecFile()<CR>
+nnoremap <silent> <Leader>s :call RunNearestSpec()<CR>
+nnoremap <silent> <Leader>l :call RunLastSpec()<CR>
 
 " Run commands that require an interactive shell
-nnoremap <Leader>r :RunInInteractiveShell<space>
+nnoremap <silent> <Leader>r :RunInInteractiveShell<space>
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
@@ -260,6 +260,10 @@ set smartcase
 
 " Make Y behave like other capitals
 map Y y$
+
+hi Normal ctermbg=NONE
+
+set fillchars=vert:\┃,diff:⎼,fold:⎼
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
